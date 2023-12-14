@@ -58,13 +58,21 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
   ) => {
     e.stopPropagation();
 
-    if (savedPostRecord) {
-      setIsSaved(false);
-      return deleteSavePost(savedPostRecord.$id);
+    // console.log(savedPostRecord);
+
+    // if (savedPostRecord) {
+    //   setIsSaved(false);
+    //    deleteSavePost(savedPostRecord.$id);
+    // }
+
+    if(!isSaved){
+
+      savePost({ userId: userId, postId: post.$id });
+      setIsSaved(true);
+    }else{
+      deleteSavePost(savedPostRecord.$id);
     }
 
-    savePost({ userId: userId, postId: post.$id });
-    setIsSaved(true);
   };
 
   const containerStyles = location.pathname.startsWith("/profile")
