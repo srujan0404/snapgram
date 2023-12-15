@@ -62,7 +62,7 @@ const Profile = () => {
 
             <div className="flex gap-8 mt-10 items-center justify-center xl:justify-start flex-wrap z-20">
               <StatBlock value={currentUser.posts.length} label="Posts" />
-              <StatBlock value="2M" label="Followers" />
+              <StatBlock value="8M" label="Followers" />
               <StatBlock value={2} label="Following" />
             </div>
 
@@ -91,7 +91,7 @@ const Profile = () => {
             </div>
             <div className={`${user.id === id && "hidden"}`}>
               <Button type="button" className="shad-button_primary px-8">
-                Follow
+                Follow me
               </Button>
             </div>
           </div>
